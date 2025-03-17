@@ -38,16 +38,4 @@ public class MonsterController : MonoBehaviour
         RB.linearVelocity = vel;
     }
 
-    private void OnCollisionEnter2D(Collision2D other)
-    {
-        if (other.gameObject.CompareTag("Wall"))
-        {
-            BC.isTrigger = true;
-            Debug.Log("Pass through wall");
-        } else
-        {
-            BC.isTrigger = false;
-        }
-    }
-
 }
