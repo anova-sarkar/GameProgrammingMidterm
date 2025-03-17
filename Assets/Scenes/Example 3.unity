@@ -5334,6 +5334,7 @@ GameObject:
   - component: {fileID: 618523033}
   - component: {fileID: 618523032}
   - component: {fileID: 618523034}
+  - component: {fileID: 618523035}
   m_Layer: 0
   m_Name: Exit
   m_TagString: Untagged
@@ -5457,6 +5458,18 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &618523035
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 618523031}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8de52a036fa548545a43749bea32a401, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &625550999
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -16561,6 +16574,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 5295994739419230840, guid: 5465daea84a2bcb43acd34cbcbb9c9ae, type: 3}
+      propertyPath: exit
+      value: 
+      objectReference: {fileID: 618523035}
     - target: {fileID: 5295994739419230840, guid: 5465daea84a2bcb43acd34cbcbb9c9ae, type: 3}
       propertyPath: ScoreText
       value: 

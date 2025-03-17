@@ -22,6 +22,9 @@ public class PlayerScript : MonoBehaviour
     //This is how many points we currently have
     public int Score;
 
+    //This is the variable for the exit
+    public ExitScript exit;
+
     //Start automatically gets triggered once when the objects turns on/the game starts
     void Start()
     {
@@ -96,10 +99,11 @@ public class PlayerScript : MonoBehaviour
     {
         if (Score == 0) {
             ScoreText.text = "Get to the Exit!";
+            exit.Open();
         }
         else
         {
-            ScoreText.text = "Score: " + Score;
+            ScoreText.text = "Coins Left: " + Score;
         }
     }
 
