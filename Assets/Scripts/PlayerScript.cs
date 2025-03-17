@@ -18,11 +18,15 @@ public class PlayerScript : MonoBehaviour
     
     //This will control how fast the player moves
     public float Speed = 5;
-    
+
+    //This is how many points we currently have
+    public int Score;
+
     //Start automatically gets triggered once when the objects turns on/the game starts
     void Start()
     {
         //During setup we call UpdateScore to make sure our score text looks correct
+        Score = 50;
         UpdateScore();
     }
 
@@ -61,9 +65,6 @@ public class PlayerScript : MonoBehaviour
         RB.linearVelocity = vel;
     }
 
-    //This is how many points we currently have
-    public int Score = 0;
-
     //This gets called whenever you bump into another object, like a wall or coin.
     private void OnCollisionEnter2D(Collision2D other)
     {
@@ -83,7 +84,7 @@ public class PlayerScript : MonoBehaviour
             //Tell the coin that you bumped into them so they can self destruct or whatever
             coin.GetBumped();
             //Make your score variable go up by one. . .
-            Score++;
+            Score--;
             //And then update the game's score text
             UpdateScore();
         }
@@ -93,8 +94,8 @@ public class PlayerScript : MonoBehaviour
     //Even if your 'score' variable goes up, if you don't update the text the player doesn't know
     public void UpdateScore()
     {
-        if (Score >= 4) {
-            ScoreText.text = "You Win!";
+        if (Score == 0) {
+            ScoreText.text = "Get to the Exit!";
         }
         else
         {
