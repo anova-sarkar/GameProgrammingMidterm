@@ -37,5 +37,4 @@ public class MonsterController : MonoBehaviour
 
         RB.linearVelocity = vel;
     }
-
 }
