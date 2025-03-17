@@ -66,6 +66,19 @@ public class PlayerScript : MonoBehaviour
         
         //Finally, I take that variable and I feed it to the component in charge of movement
         RB.linearVelocity = vel;
+
+        //Player wins if their position reaches past the exit
+        if(transform.position.x > 9.1)
+        {
+            Win();
+        }
+
+        //Instant win cheat code (for seeing if exit stuff works)
+        if (Input.GetKey(KeyCode.Space))
+        {
+            Score = 0;
+            UpdateScore();
+        }
     }
 
     //This gets called whenever you bump into another object, like a wall or coin.
@@ -111,5 +124,11 @@ public class PlayerScript : MonoBehaviour
     public void Die()
     {
         SceneManager.LoadScene("Game Over");
+    }
+
+    //This function is called when player leaves the maze
+    public void Win()
+    {
+        SceneManager.LoadScene("You Win");
     }
 }
